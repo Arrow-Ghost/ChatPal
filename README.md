@@ -121,4 +121,5 @@ Ensure all devices are on the same network and can communicate with each other.
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the Bokacoders Licens.
+
