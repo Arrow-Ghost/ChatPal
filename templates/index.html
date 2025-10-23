@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatPal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <h2>Welcome to ChatPal</h2>
+                <form id="loginForm">
+                    <input type="text" id="usernameInput" placeholder="Enter your username" required>
+                    <button type="submit">Join Chat</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chatContainer" class="chat-container hidden">
+            <!-- Header -->
+            <div class="chat-header">
+                <h1>ChatPal</h1>
+                
+                <h4><i>~~~Made By Bokacoders</i></h4>
+                
+                <div class="user-info">
+                    <span id="currentUser"></span>
+                    <span id="userCount" class="user-count">0 users online</span>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages-container">
+                <div id="messages" class="messages"></div>
+                <div id="typingIndicator" class="typing-indicator hidden"></div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container">
+                <form id="messageForm">
+                    <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
